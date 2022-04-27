@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6" *ngFor="let place of places">
+            <mat-card *ngIf="place.place_id == selectedMood" (click)="getMoreInformation(place.id)">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>{{place.place_name}}</mat-card-title>
+                    <mat-card-subtitle>{{place.place_state}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="{{place.place_image}}" width="300px" height="300px">
+                <mat-card-content>
+                    <p>
+                        {{place.place_description}}
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+ 

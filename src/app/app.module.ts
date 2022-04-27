@@ -1,6 +1,6 @@
 ﻿import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // used to create fake backend
@@ -12,19 +12,37 @@ import { appRoutingModule } from './app.routing';
 import { BasicAuthInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
-
+import {MatSelectModule} from '@angular/material/select';
+import { MatButton, MatButtonModule, MatCardModule, MatFormFieldModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';;
+import { PlacesComponent } from './places/places.component'
+import {MatGridListModule} from '@angular/material/grid-list';;
+import { PlaceDetailsComponent } from './place-details/place-details.component'
+;
+import { BookTicketsComponent } from './book-tickets/book-tickets.component'
 @NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        appRoutingModule
+        appRoutingModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        MatGridListModule,
+        MatCardModule,
+        MatButtonModule
     ],
     declarations: [
         AppComponent,
         HomeComponent,
         LoginComponent
-    ],
+,
+        PlacesComponent ,
+        PlaceDetailsComponent ,
+        BookTicketsComponent  ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

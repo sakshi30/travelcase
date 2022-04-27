@@ -1,0 +1,22 @@
+<div class="card mt-4">
+    <h4 class="card-header">{{selectedPlace.place_name}}, {{selectedPlace.place_state}}</h4>
+    <div class="card-body">
+        <img src="{{selectedPlace.place_image}}" width="100%" height="500px">
+        <hr/>
+        <h6><b>How to reach?</b></h6>
+        <p>{{selectedPlace.access}}</p>
+
+        <hr/>
+
+        <h6><b>Language and Culture</b></h6>
+        <p>{{selectedPlace.language}}</p>
+
+        <hr/>
+
+        <h6><b>Best time to visit</b></h6>
+        <p>{{selectedPlace.best_time}}</p>
+    </div>
+    <button mat-stroked-button color="primary" (click)="bookMyTickets()">Book Now!</button>
+
+</div>
+<br/><br/>
