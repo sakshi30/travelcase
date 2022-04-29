@@ -20,6 +20,12 @@ import {MatGridListModule} from '@angular/material/grid-list';;
 import { PlaceDetailsComponent } from './place-details/place-details.component'
 ;
 import { BookTicketsComponent } from './book-tickets/book-tickets.component'
+;
+import { MoodSelectComponent } from './mood-select/mood-select.component'
+;
+import { BudgetSelectComponent } from './budget-select/budget-select.component'
+import { ActivitySelectComponent } from './activity-select/activity-select.component'
+import { DestinationSelectComponent } from './destination-select/destination-select.component';
 @NgModule({
     imports: [
         BrowserModule,
@@ -42,7 +48,11 @@ import { BookTicketsComponent } from './book-tickets/book-tickets.component'
 ,
         PlacesComponent ,
         PlaceDetailsComponent ,
-        BookTicketsComponent  ],
+        BookTicketsComponent ,
+        MoodSelectComponent ,
+        BudgetSelectComponent,
+        DestinationSelectComponent,
+        ActivitySelectComponent],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

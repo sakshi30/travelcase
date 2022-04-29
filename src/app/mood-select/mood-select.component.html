@@ -1,0 +1,15 @@
+<div class="card mt-4">
+    <h4 class="card-header">You're logged in with TravelCase!!</h4>
+    <div class="card-body">
+        <h6>Please select your mood?</h6>
+        <mat-form-field appearance="outline">
+            <mat-label>What's your mood?</mat-label>
+            <mat-select [formControl]="moods">
+              <mat-option *ngFor="let mood of moodList" [value]="mood.emotion" (click)="selectedMood = mood.id">{{mood.emotion}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<div class="mt-4">
+    <app-places [selectedMood]="selectedMood"></app-places>
+</div>
